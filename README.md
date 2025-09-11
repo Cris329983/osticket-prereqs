@@ -35,7 +35,7 @@ This first step shows the process of extracting compressed (zipped) files on a W
 </p>
 <p>
   
-Here you can see the Windows Features window, where various optional Windows components can be turned on or off. The highlighted item is Internet Information Services (IIS), which is not currently enabled. This step is part of a pre-installation process to configure system features needed for IT service environments.
+Here you can see the Windows Features window, where various optional Windows components can be turned on or off. The highlighted item is Internet Information Services (IIS), which is not currently enabled. This step is part of a pre-installation process to configure system features needed for IT service environments, I also configured the server to support PHP execution by enabling the CGI feature since is required for IIS to properly process .php files. Since osTicket is a PHP-based web application, enabling FastCGI ensures that the PHP interpreter can communicate efficiently with the IIS server to serve dynamic content.
 </p>
 <br />
 
@@ -53,7 +53,7 @@ Next is the extraction of a compressed PHP installation file to the directory C:
 <img src=https://i.imgur.com/6w0gfe7.png) height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-This screenshot shows the setup of Microsoft Visual C++ Redistributable packages as part of the osTicket helpdesk system deployment on a Windows environment. This step was crucial to enabling proper operation of Apache, PHP extensions, and other backend services needed by osTicket. Verified successful installation and resolved dependency issues to ensure smooth web-based installation and ticket system performance.
+This screenshot shows the setup of Microsoft Visual C++ Redistributable packages as part of the osTicket helpdesk system deployment on a Windows environment. This step was crucial to enabling proper operation of Apache, PHP extensions, and other backend services needed by osTicket. Verified successful installation and resolved dependency issues to ensure smooth web-based installation and ticket system performance, all other programs also where installed as they are all important.
 </p>
 <br />
 
@@ -163,10 +163,37 @@ This configuration ensures that the osTicket application will have the necessary
 <br />
 
 <p>
+<img src="https://github.com/user-attachments/assets/241380ae-1b43-4e48-a77d-ba47f7817a7e" />
+
+
+
+
+</p>
+
+<p>During installation, osTicket requires this file to be writable by the web server. Once the setup is complete, it is crucial to tighten permissions to prevent unauthorized changes or disclosure of sensitive configuration data.
+
+Key Configuration Details:
+
+File Owner: Administrators (OSTICKET11\Administrators)
+
+Permissions Set:
+
+Principal: Everyone
+
+Access: Read & Execute
+
+Inheritance: None
+
+This configuration ensures that the ost-config.php file is only readable and has full control by users and processes that need access, without giving unnecessary write permissions, aligning with security best practices.
+
+</p>
+<br />
+
+<p>
 <img src=https://i.imgur.com/roh5oJr.png) height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-To continue I Successfully created and configured the MySQL database backend for the osTicket ticketing system. Tasks included creating the initial database schema, assigning secure user privileges, and optimizing database performance for reliability and scalability, this was done after other several steps of course.
+To continue I Successfully created and configured the MySQL database backend for the osTicket ticketing system in "HeidiSQL". Tasks included creating the initial database schema, assigning secure user privileges, and optimizing database performance for reliability and scalability, this was done after other several steps of course.
 </p>
 <br />  
 
