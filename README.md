@@ -119,7 +119,7 @@ The wwwroot folder is the default location where IIS looks for websites and web 
 
 After this step, IIS will be able to recognize osTicket as a web application and serve it through the browser.
 
-This step is crucial because it deploys osTicket to the web server, making it accessible through http://localhost/osTicket (or the server’s IP/domain)
+This step is crucial because it deploys osTicket to the web server.
 </p>
 <br />
 
